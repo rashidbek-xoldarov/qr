@@ -1,0 +1,16 @@
+.docviewer #pdf-controls {
+  display: none;
+}
+
+.docviewer #pdf-page-wrapper {
+  margin: 0;
+}
+
+.docviewer .react-pdf__Document {
+  margin: 0;
+}
+
+.docviewer canvas {
+  width: 100% !important;
+  height: auto !important;
+}
