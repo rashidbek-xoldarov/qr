@@ -14,7 +14,6 @@ function App() {
   }, []);
   return (
     <div>
-      dddd
       {data}
       {open && (
         <QrReader
