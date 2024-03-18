@@ -18,7 +18,7 @@ function App() {
       {open && (
         <QrReader
           scanDelay={2000}
-          facingMode={"environment"}
+          constraints={{ facingMode: "environment" }}
           onResult={(result, error) => {
             if (result) {
               setData(result?.text);
