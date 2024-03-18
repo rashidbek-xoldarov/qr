@@ -3,7 +3,7 @@ import "./App.css";
 import { QrReader } from "react-qr-reader";
 
 function App() {
-  const [data, setData] = useState("aaa");
+  const [data, setData] = useState("");
   const [open, setOpen] = useState(false);
 
   console.log(navigator);
