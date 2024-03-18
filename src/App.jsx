@@ -5,6 +5,7 @@ import { QrReader } from "react-qr-reader";
 function App() {
   const [data, setData] = useState("");
   const [open, setOpen] = useState(false);
+  const [count, setCount] = useState(0);
 
   console.log(navigator);
   useEffect(() => {
@@ -14,7 +15,9 @@ function App() {
   }, []);
   return (
     <div>
-      {data}
+      <div style={{ textAlign: "center", fontSize: "22px" }}>
+        You scanned {data} {count} items
+      </div>
       {open && (
         <QrReader
           scanDelay={2000}
@@ -23,11 +26,23 @@ function App() {
             if (result) {
               setData(result?.text);
               setOpen(false);
+              setCount((prev) => prev + 1);
             }
           }}
         />
       )}
-      <button onClick={() => setOpen(true)}>Scan</button>
+      <button
+        style={{
+          display: "block",
+          width: "100%",
+          marginTop: "30px",
+          border: "1px solid black",
+          backgroundColor: "gray",
+        }}
+        onClick={() => setOpen(true)}
+      >
+        Scan
+      </button>
     </div>
   );
 }
