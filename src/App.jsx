@@ -19,6 +19,7 @@ function App() {
       {open && (
         <QrReader
           scanDelay={2000}
+          facingMode={""}
           onResult={(result, error) => {
             if (result) {
               setData(result?.text);
